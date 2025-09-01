@@ -1,12 +1,11 @@
 [gd_scene load_steps=7 format=3 uid="uid://70vvpkkf4bmv"]
 
 [ext_resource type="Script" uid="uid://cnvuuxagkevqj" path="res://Scripts/card.gd" id="1_brehn"]
-[ext_resource type="Texture2D" uid="uid://0wcyn3mkld8q" path="res://Card Textures/cardClubs2.png" id="1_wf8id"]
 [ext_resource type="Texture2D" uid="uid://deni101h0c2lb" path="res://Card Textures/cardBack_blue2.png" id="2_brehn"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wf8id"]
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jjvhh"]
-transparency = 1
-albedo_texture = ExtResource("1_wf8id")
 
 [sub_resource type="QuadMesh" id="QuadMesh_kry3j"]
 
@@ -14,8 +13,12 @@ albedo_texture = ExtResource("1_wf8id")
 transparency = 1
 albedo_texture = ExtResource("2_brehn")
 
-[node name="Card" type="Node3D"]
+[node name="Card" type="Node3D" node_paths=PackedStringArray("face")]
 script = ExtResource("1_brehn")
+face = NodePath("Face")
+card_face = SubResource("StandardMaterial3D_wf8id")
+card_type = null
+card_value = null
 
 [node name="Face" type="MeshInstance3D" parent="."]
 material_override = SubResource("StandardMaterial3D_jjvhh")
