@@ -3,18 +3,14 @@ class_name Card
 
 @export var face: MeshInstance3D
 #@onready var card_back: MeshInstance3D = $Back
-enum CardType { MONSTER, WEAPON, POTION }
+#enum CardType { MONSTER, WEAPON, POTION }
 @export var card_face: StandardMaterial3D
-@export var card_type: CardType
+@export var card_type: CardData.CardType
 @export var card_value: int			#this value is shared between all card types
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	face.material_override.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+	#face.material_override.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
 	pass
 
 ##gets data from resource and applies to card node.

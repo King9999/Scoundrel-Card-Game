@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://deni101h0c2lb" path="res://Card Textures/cardBack_blue2.png" id="2_brehn"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wf8id"]
+transparency = 1
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jjvhh"]
 
@@ -17,8 +18,6 @@ albedo_texture = ExtResource("2_brehn")
 script = ExtResource("1_brehn")
 face = NodePath("Face")
 card_face = SubResource("StandardMaterial3D_wf8id")
-card_type = null
-card_value = null
 
 [node name="Face" type="MeshInstance3D" parent="."]
 material_override = SubResource("StandardMaterial3D_jjvhh")
