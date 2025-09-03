@@ -1,11 +1,11 @@
 [gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://chu31hujr5o5w"]
 
-[ext_resource type="Texture2D" uid="uid://dh0qhfcd50rhu" path="res://Card Textures/cardClubsJ.png" id="1_hobmj"]
+[ext_resource type="Texture2D" uid="uid://cprwhghcflpy2" path="res://Card Textures/cardClubsQ.png" id="1_hobmj"]
 [ext_resource type="Script" uid="uid://16dur1spuvdd" path="res://Resources/CardData.gd" id="2_pbil4"]
 
 [resource]
 script = ExtResource("2_pbil4")
 card_face = ExtResource("1_hobmj")
 card_type = 0
-card_value = 11
+card_value = 12
 metadata/_custom_type_script = "uid://16dur1spuvdd"

@@ -1,0 +1,49 @@
+[gd_scene load_steps=17 format=3 uid="uid://cwhy203re6wbx"]
+
+[ext_resource type="Script" uid="uid://dmptcqrga67gm" path="res://Scripts/deck.gd" id="1_io7pv"]
+[ext_resource type="Script" uid="uid://16dur1spuvdd" path="res://Resources/CardData.gd" id="2_c005t"]
+[ext_resource type="PackedScene" uid="uid://70vvpkkf4bmv" path="res://Scenes/card.tscn" id="2_nlncs"]
+[ext_resource type="Resource" uid="uid://byoycijrnjciu" path="res://Resources/monster_club_2.tres" id="3_w7esf"]
+[ext_resource type="Resource" uid="uid://city8y64t5dy" path="res://Resources/monster_club_3.tres" id="4_eq2nn"]
+[ext_resource type="Resource" uid="uid://d1jbubp5n0rs0" path="res://Resources/monster_club_4.tres" id="5_hn3gr"]
+[ext_resource type="Resource" uid="uid://d68ndxih2u2p" path="res://Resources/monster_club_5.tres" id="6_q5g27"]
+[ext_resource type="Resource" uid="uid://ltxbyigtrdss" path="res://Resources/monster_club_6.tres" id="7_d3noc"]
+[ext_resource type="Resource" uid="uid://cuaaqabra1tmg" path="res://Resources/monster_club_7.tres" id="8_5dgo8"]
+[ext_resource type="Resource" uid="uid://b107dqug24vlg" path="res://Resources/monster_club_8.tres" id="9_age4p"]
+[ext_resource type="Resource" uid="uid://cdsknflls4env" path="res://Resources/monster_club_9.tres" id="10_36qco"]
+[ext_resource type="Resource" uid="uid://cheqjdxb4apf0" path="res://Resources/monster_club_10.tres" id="11_7t2rj"]
+[ext_resource type="Resource" uid="uid://dxwsrmgh2dxxv" path="res://Resources/monster_club_Jack.tres" id="12_56jfk"]
+[ext_resource type="Resource" uid="uid://chu31hujr5o5w" path="res://Resources/monster_club_Queen.tres" id="13_yqw3q"]
+[ext_resource type="Resource" uid="uid://c0avrggwo5ky5" path="res://Resources/monster_club_King.tres" id="14_np1no"]
+[ext_resource type="Resource" uid="uid://cql60n5dv2qag" path="res://Resources/monster_club_Ace.tres" id="15_wq5of"]
+
+[node name="Deck" type="Node3D" node_paths=PackedStringArray("cards")]
+script = ExtResource("1_io7pv")
+cards = [NodePath("Card"), NodePath("Card2"), NodePath("Card3"), NodePath("Card4"), NodePath("Card5"), NodePath("Card6"), NodePath("Card7"), NodePath("Card8"), NodePath("Card9"), NodePath("Card10"), NodePath("Card11"), NodePath("Card12"), NodePath("Card13")]
+card_data = Array[ExtResource("2_c005t")]([ExtResource("3_w7esf"), ExtResource("4_eq2nn"), ExtResource("5_hn3gr"), ExtResource("6_q5g27"), ExtResource("7_d3noc"), ExtResource("8_5dgo8"), ExtResource("9_age4p"), ExtResource("10_36qco"), ExtResource("11_7t2rj"), ExtResource("12_56jfk"), ExtResource("13_yqw3q"), ExtResource("14_np1no"), ExtResource("15_wq5of")])
+
+[node name="Card" parent="." instance=ExtResource("2_nlncs")]
+
+[node name="Card2" parent="." instance=ExtResource("2_nlncs")]
+
+[node name="Card3" parent="." instance=ExtResource("2_nlncs")]
+
+[node name="Card4" parent="." instance=ExtResource("2_nlncs")]
+
+[node name="Card5" parent="." instance=ExtResource("2_nlncs")]
+
+[node name="Card6" parent="." instance=ExtResource("2_nlncs")]
+
+[node name="Card7" parent="." instance=ExtResource("2_nlncs")]
+
+[node name="Card8" parent="." instance=ExtResource("2_nlncs")]
+
+[node name="Card9" parent="." instance=ExtResource("2_nlncs")]
+
+[node name="Card10" parent="." instance=ExtResource("2_nlncs")]
+
+[node name="Card11" parent="." instance=ExtResource("2_nlncs")]
+
+[node name="Card12" parent="." instance=ExtResource("2_nlncs")]
+
+[node name="Card13" parent="." instance=ExtResource("2_nlncs")]

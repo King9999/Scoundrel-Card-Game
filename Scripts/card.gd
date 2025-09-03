@@ -16,5 +16,6 @@ func _ready() -> void:
 ##gets data from resource and applies to card node.
 func set_card_data(data: CardData):
 	face.material_override.albedo_texture = data.card_face
+	#print(face.material_override.albedo_texture)
 	card_type = data.card_type
 	card_value = data.card_value
