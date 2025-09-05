@@ -20,9 +20,11 @@ func _process(delta: float) -> void:
 	
 func draw_card(amount: int):
 	#adds cards to the room. Four cards make up a room
-	if amount <= 0:
-		assert(false, "Cannot draw 0 cards")
+	if amount <= 0 || amount > 4:
+		assert(false, "Cannot draw 0 or more than 4 cards")
 		return
+		
+		#cards must be placed in designated nodes on the board.
 	pass
 
 
@@ -46,4 +48,4 @@ func shuffle_deck():
 				
 		#add card data to card node	
 		used_data[rand_num] = true
-		cards[i].set_card_data(card_data[rand_num])	
+		cards[i].set_card_data(card_data[rand_num])
