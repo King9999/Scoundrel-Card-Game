@@ -1,15 +1,20 @@
-[gd_scene load_steps=5 format=3 uid="uid://blgoy73mkojol"]
+[gd_scene load_steps=7 format=3 uid="uid://blgoy73mkojol"]
 
 [ext_resource type="Script" uid="uid://dwesm3804gwdb" path="res://Scripts/GameManager.gd" id="1_bo1nx"]
 [ext_resource type="PackedScene" uid="uid://70vvpkkf4bmv" path="res://Scenes/card.tscn" id="1_jjgbg"]
 [ext_resource type="Resource" uid="uid://dwo0buqmav62j" path="res://Resources/monster_spade_2.tres" id="3_8gbba"]
 [ext_resource type="PackedScene" uid="uid://cwhy203re6wbx" path="res://Scenes/deck.tscn" id="4_jjvhh"]
 
-[node name="Main" type="Node3D" node_paths=PackedStringArray("deck")]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jjvhh"]
+albedo_color = Color(0.221955, 0.609054, 0.518656, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_kry3j"]
+
+[node name="Main" type="Node3D"]
 script = ExtResource("1_bo1nx")
 card_scene = ExtResource("1_jjgbg")
 card_data = ExtResource("3_8gbba")
-deck = NodePath("Deck")
+deck_scene = ExtResource("4_jjvhh")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.699351, 0.714778, 0, -0.714778, 0.699351, 0, 1.97036, 2.00632)
@@ -17,6 +22,9 @@ transform = Transform3D(1, 0, 0, 0, 0.699351, 0.714778, 0, -0.714778, 0.699351, 
 [node name="Environment" type="Node" parent="."]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Environment"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.63255, 0)
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 6.63255, 5)
 
-[node name="Deck" parent="." instance=ExtResource("4_jjvhh")]
+[node name="Board" type="MeshInstance3D" parent="."]
+transform = Transform3D(10.2599, 0, 0, 0, 7.03413, 0, 0, 0, 7.03413, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_jjvhh")
+mesh = SubResource("PlaneMesh_kry3j")

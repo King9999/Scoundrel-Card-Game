@@ -28,16 +28,14 @@ func draw_card(amount: int):
 
 ##Creates a fresh deck of cards. Card data is inserted to cards at random 
 func shuffle_deck():
-	
 	#safety check
 	if (cards.size() != card_data.size()):
 		assert(false, "Card Data array doesn't match size of Card array!")
 		return
 	
 	var used_data: Array[bool]
-	used_data.resize(card_data.size())		#defaults to false upon resizing
+	used_data.resize(card_data.size())		#contents of array defaults to false upon resizing
 		
-	
 	for i in cards.size():
 		#randomly apply card data to cards
 		var rand_num: int
@@ -48,8 +46,4 @@ func shuffle_deck():
 				
 		#add card data to card node	
 		used_data[rand_num] = true
-		print (rand_num)
 		cards[i].set_card_data(card_data[rand_num])	
-		#cards[i].face.material_override.albedo_texture = card_data[rand_num].card_face
-		#cards[i].card_type = card_data[rand_num].card_type
-		#cards[i].card_value = card_data[rand_num].card_value
