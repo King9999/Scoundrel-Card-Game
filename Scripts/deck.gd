@@ -23,9 +23,18 @@ func draw_card(amount: int):
 	if amount <= 0 || amount > 4:
 		assert(false, "Cannot draw 0 or more than 4 cards")
 		return
+	
+	var board = Singleton.board	
+	#cards must be placed in designated nodes on the board.
+	for i in amount:
+		var card = cards.pop_front() 		#removes top card
+		board.room[i] = card
+		card.global_position = board.card_spaces[i].global_position
 		
-		#cards must be placed in designated nodes on the board.
-	pass
+		#rotate card on its x axis so it lays flat
+		card.rotate_x(-90)
+		print("Card Pos: " + str(card.global_position))
+		print(card.rotation)
 
 
 ##Creates a fresh deck of cards. Card data is inserted to cards at random 

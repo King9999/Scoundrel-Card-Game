@@ -1,11 +1,14 @@
 extends Node3D
+class_name GameManager
 
 @export var card_scene: PackedScene
 @export var card_data: CardData
-@export var deck_scene: PackedScene
+@export var card_spaces: Array[Node3D] = []
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	Singleton.game_manager = self
 	#var card:Card = card_scene.instantiate()
 	#card.face.material_override.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
 	#card.face.material_override.albedo_texture = card_data.card_face
@@ -13,12 +16,13 @@ func _ready() -> void:
 	#deck.shuffle_deck()
 	#for i in deck.cards.size():
 		#deck.cards[i].global_position = Vector3(randf_range(0, 10), randf_range(0, 10), randf_range(0, 10))
-	var deck: Deck = deck_scene.instantiate()
-	deck.shuffle_deck()
+	#var deck: Deck = deck_scene.instantiate()
+	#deck.shuffle_deck()
 	#for i in deck.cards.size():
 		#deck.cards[i].global_position = Vector3(randf_range(0, 10), randf_range(0, 10), randf_range(0, 10))
-	add_child(deck)
-	pass
+	#deck.draw_card(4)
+	#add_child(deck)
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

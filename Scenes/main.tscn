@@ -11,11 +11,11 @@ albedo_color = Color(0.221955, 0.609054, 0.518656, 1)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_kry3j"]
 
-[node name="Main" type="Node3D"]
+[node name="Main" type="Node3D" node_paths=PackedStringArray("card_spaces")]
 script = ExtResource("1_bo1nx")
 card_scene = ExtResource("1_jjgbg")
 card_data = ExtResource("3_8gbba")
-deck_scene = ExtResource("4_jjvhh")
+card_spaces = [NodePath("Board/Card Space 1"), NodePath("Board/Card Space 2"), NodePath("Board/Card Space 3"), NodePath("Board/Card Space 4")]
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.699351, 0.714778, 0, -0.714778, 0.699351, 0, 1.97036, 2.91179)
@@ -25,24 +25,26 @@ transform = Transform3D(1, 0, 0, 0, 0.699351, 0.714778, 0, -0.714778, 0.699351, 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Environment"]
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 6.63255, 5)
 
-[node name="Board" type="MeshInstance3D" parent="." node_paths=PackedStringArray("card_positions")]
+[node name="Board" type="MeshInstance3D" parent="." node_paths=PackedStringArray("card_spaces", "weapon_position")]
 transform = Transform3D(10.2599, 0, 0, 0, 7.03413, 0, 0, 0, 7.03413, 0, -1, 0)
 material_override = SubResource("StandardMaterial3D_jjvhh")
 mesh = SubResource("PlaneMesh_kry3j")
 script = ExtResource("5_kry3j")
-card_positions = [NodePath("Card Spot 1"), NodePath("Card Spot 2"), NodePath("Card Spot 3"), NodePath("Card Spot 4")]
+deck_scene = ExtResource("4_jjvhh")
+card_spaces = [NodePath("Card Space 1"), NodePath("Card Space 2"), NodePath("Card Space 3"), NodePath("Card Space 4")]
+weapon_position = NodePath("Weapon Space")
 
-[node name="Card Spot 1" type="Node3D" parent="Board"]
+[node name="Card Space 1" type="Node3D" parent="Board"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.300388, 0, 0)
 
-[node name="Card Spot 2" type="Node3D" parent="Board"]
+[node name="Card Space 2" type="Node3D" parent="Board"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.100388, 0, 0)
 
-[node name="Card Spot 3" type="Node3D" parent="Board"]
+[node name="Card Space 3" type="Node3D" parent="Board"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0996116, 0, 0)
 
-[node name="Weapon Spot" type="Node3D" parent="Board"]
+[node name="Weapon Space" type="Node3D" parent="Board"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00395873, 0, 0.155019)
 
-[node name="Card Spot 4" type="Node3D" parent="Board"]
+[node name="Card Space 4" type="Node3D" parent="Board"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.299612, 0, 0)
