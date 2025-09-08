@@ -17,6 +17,7 @@ transparency = 1
 albedo_texture = ExtResource("2_brehn")
 
 [node name="Card" type="Node3D" node_paths=PackedStringArray("face")]
+top_level = true
 script = ExtResource("1_brehn")
 face = NodePath("Face")
 card_face = SubResource("StandardMaterial3D_wf8id")

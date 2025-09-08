@@ -32,8 +32,8 @@ func draw_card(amount: int):
 		card.global_position = board.card_spaces[i].global_position
 		
 		#rotate card on its x axis so it lays flat
-		card.rotate_x(-90)
-		print("Card Pos: " + str(card.global_position))
+		card.set_rotation_degrees(Vector3(-90, 0, 0))
+		print("Card Pos: " + str(board.room[i].global_position))
 		print(card.rotation)
 
 
@@ -58,3 +58,10 @@ func shuffle_deck():
 		#add card data to card node	
 		used_data[rand_num] = true
 		cards[i].set_card_data(card_data[rand_num])
+		
+		#create pile of cards
+		if i > 0:
+			var new_pos_y = cards[i - 1].global_position.y + (0.01 * i)
+			cards[i].global_position = Vector3(cards[i].global_position.x, new_pos_y, cards[i].global_position.z)
+		
+		cards[i].set_rotation_degrees(cards[i].FACE_DOWN_ANGLE)

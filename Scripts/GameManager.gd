@@ -1,9 +1,9 @@
 extends Node3D
 class_name GameManager
 
-@export var card_scene: PackedScene
-@export var card_data: CardData
-@export var card_spaces: Array[Node3D] = []
+#@export var card_scene: PackedScene
+#@export var card_data: CardData
+#@export var card_spaces: Array[Node3D] = []
 
 
 # Called when the node enters the scene tree for the first time.

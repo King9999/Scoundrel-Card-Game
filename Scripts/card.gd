@@ -8,6 +8,10 @@ class_name Card
 @export var card_type: CardData.CardType
 @export var card_value: int			#this value is shared between all card types
 
+#rotations in degrees for placing card face down or face up
+const FACE_DOWN_ANGLE: Vector3 = Vector3(90, 0, 0)
+const FACE_UP_ANGLE: Vector3 = Vector3(-90, 0, 0)
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	#face.material_override.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
