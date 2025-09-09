@@ -42,4 +42,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	#var deck_pos = deck.global_position
 	#deck.global_position = Vector3(deck_pos.x, deck_pos.y, deck_pos.z + 2 * delta)
+	#get mouse position
+	#if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+		#var mouse_pos = Viewport.get_mouse_position()
 	pass

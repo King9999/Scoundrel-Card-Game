@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://70vvpkkf4bmv"]
+[gd_scene load_steps=8 format=3 uid="uid://70vvpkkf4bmv"]
 
 [ext_resource type="Script" uid="uid://cnvuuxagkevqj" path="res://Scripts/card.gd" id="1_brehn"]
 [ext_resource type="Texture2D" uid="uid://deni101h0c2lb" path="res://Card Textures/cardBack_blue2.png" id="2_brehn"]
@@ -16,7 +16,9 @@ transparency = 1
 transparency = 1
 albedo_texture = ExtResource("2_brehn")
 
-[node name="Card" type="Node3D" node_paths=PackedStringArray("face")]
+[sub_resource type="BoxShape3D" id="BoxShape3D_wf8id"]
+
+[node name="Card" type="StaticBody3D" node_paths=PackedStringArray("face")]
 top_level = true
 script = ExtResource("1_brehn")
 face = NodePath("Face")
@@ -32,3 +34,7 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 
 material_override = SubResource("StandardMaterial3D_21xkr")
 mesh = SubResource("QuadMesh_kry3j")
 skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.101125, 0, 0, 0)
+shape = SubResource("BoxShape3D_wf8id")

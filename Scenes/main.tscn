@@ -13,7 +13,7 @@ albedo_color = Color(0.221955, 0.609054, 0.518656, 1)
 script = ExtResource("1_bo1nx")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.859373, 0, 0, 0, 1.12099, 0.293137, 0, -1.14572, 0.28681, 0, 1.97036, 2.91179)
+transform = Transform3D(1, 0, 0, 0, 0.475963, 0.879465, 0, -0.879465, 0.475963, 0, 2.48173, 2.91179)
 
 [node name="Environment" type="Node" parent="."]
 
@@ -42,9 +42,24 @@ transform = Transform3D(10.2599, 0, 0, 0, 7.03413, 0, 0, 0, 7.03413, 0.8, 0, 1.4
 top_level = true
 
 [node name="Weapon Space" type="Node3D" parent="Board"]
-transform = Transform3D(10.2599, 0, 0, 0, 7.03413, 0, 0, 0, 7.03413, -0.0406162, 0, 1.09042)
+transform = Transform3D(10.2599, 0, 0, 0, 7.03413, 0, 0, 0, 7.03413, -0.0406162, 0, 2.46031)
 top_level = true
 
 [node name="Card Space 4" type="Node3D" parent="Board"]
 transform = Transform3D(10.2599, 0, 0, 0, 7.03413, 0, 0, 0, 7.03413, 2.074, 0, 1.42928)
 top_level = true
+
+[node name="GUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="GUI"]
+layout_mode = 0
+offset_right = 739.0
+offset_bottom = 125.0
+theme_override_font_sizes/normal_font_size = 64
+text = "Test"
