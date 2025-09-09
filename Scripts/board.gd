@@ -33,9 +33,9 @@ func _ready() -> void:
 	#deck.top_level = true
 
 	add_child(deck)
-	#var deck_pos = deck.global_position
+	#var deck_pos = deck.global_position TODO: Find a way to move the deck! This doesn't work for some reason
 	#deck.global_position = Vector3(deck_pos.x + 10, deck_pos.y, deck_pos.z + 100)
-	#print("Deck Pos " + str(deck.global_position))
+	print("Deck Pos " + str(deck.global_position))
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

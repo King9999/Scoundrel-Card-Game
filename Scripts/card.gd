@@ -22,3 +22,9 @@ func set_card_data(data: CardData):
 	face.material_override.albedo_texture = data.card_face
 	card_type = data.card_type
 	card_value = data.card_value
+
+func set_face_down():
+	set_rotation_degrees(FACE_DOWN_ANGLE)
+
+func set_face_up():
+	set_rotation_degrees(FACE_UP_ANGLE)

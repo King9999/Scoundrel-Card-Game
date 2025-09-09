@@ -21,7 +21,7 @@ transform = Transform3D(0.859373, 0, 0, 0, 1.12099, 0.293137, 0, -1.14572, 0.286
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 6.63255, 5)
 
 [node name="Board" type="MeshInstance3D" parent="." node_paths=PackedStringArray("card_spaces", "weapon_position")]
-transform = Transform3D(5.21011, 0, 0, 0, 7.03413, 0, 0, 0, 3.09238, 0, -0.1, 0)
+transform = Transform3D(5.21011, 0, 0, 0, 7.03413, 0, 0, 0, 4.139, 0, -0.1, 0)
 material_override = SubResource("StandardMaterial3D_jjvhh")
 mesh = SubResource("PlaneMesh_kry3j")
 script = ExtResource("5_kry3j")
@@ -30,15 +30,15 @@ card_spaces = [NodePath("Card Space 1"), NodePath("Card Space 2"), NodePath("Car
 weapon_position = NodePath("Weapon Space")
 
 [node name="Card Space 1" type="Node3D" parent="Board"]
-transform = Transform3D(10.2599, 0, 0, 0, 7.03413, 0, 0, 0, 7.03413, -2.082, 0, 0)
+transform = Transform3D(10.2599, 0, 0, 0, 7.03413, 0, 0, 0, 7.03413, -2.082, 0, 1.42928)
 top_level = true
 
 [node name="Card Space 2" type="Node3D" parent="Board"]
-transform = Transform3D(10.2599, 0, 0, 0, 7.03413, 0, 0, 0, 7.03413, -0.8, 0, 0)
+transform = Transform3D(10.2599, 0, 0, 0, 7.03413, 0, 0, 0, 7.03413, -0.8, 0, 1.42928)
 top_level = true
 
 [node name="Card Space 3" type="Node3D" parent="Board"]
-transform = Transform3D(10.2599, 0, 0, 0, 7.03413, 0, 0, 0, 7.03413, 0.8, 0, 0)
+transform = Transform3D(10.2599, 0, 0, 0, 7.03413, 0, 0, 0, 7.03413, 0.8, 0, 1.42928)
 top_level = true
 
 [node name="Weapon Space" type="Node3D" parent="Board"]
@@ -46,5 +46,5 @@ transform = Transform3D(10.2599, 0, 0, 0, 7.03413, 0, 0, 0, 7.03413, -0.0406162,
 top_level = true
 
 [node name="Card Space 4" type="Node3D" parent="Board"]
-transform = Transform3D(10.2599, 0, 0, 0, 7.03413, 0, 0, 0, 7.03413, 2.074, 0, 0)
+transform = Transform3D(10.2599, 0, 0, 0, 7.03413, 0, 0, 0, 7.03413, 2.074, 0, 1.42928)
 top_level = true
