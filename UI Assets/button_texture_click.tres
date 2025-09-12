@@ -1,0 +1,13 @@
+[gd_resource type="StyleBoxTexture" load_steps=3 format=3 uid="uid://db0uyew0ily0q"]
+
+[sub_resource type="Gradient" id="Gradient_yocag"]
+offsets = PackedFloat32Array(0, 0.352459, 0.672131, 1)
+colors = PackedColorArray(0.0513978, 0.29596, 1.92523e-07, 1, 0.190864, 0.624425, 0, 1, 0.192157, 0.627451, 0, 1, 0, 0.31663, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_acp2o"]
+gradient = SubResource("Gradient_yocag")
+fill_from = Vector2(0.994624, 0.930108)
+fill_to = Vector2(0.994624, 0.112903)
+
+[resource]
+texture = SubResource("GradientTexture2D_acp2o")

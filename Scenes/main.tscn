@@ -1,10 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://blgoy73mkojol"]
+[gd_scene load_steps=12 format=3 uid="uid://blgoy73mkojol"]
 
 [ext_resource type="Script" uid="uid://dwesm3804gwdb" path="res://Scripts/GameManager.gd" id="1_bo1nx"]
 [ext_resource type="Script" uid="uid://dsre01tppqyx7" path="res://Scripts/hud.gd" id="4_21xkr"]
 [ext_resource type="PackedScene" uid="uid://cwhy203re6wbx" path="res://Scenes/deck.tscn" id="4_jjvhh"]
 [ext_resource type="Texture2D" uid="uid://dvya7arg7atwl" path="res://UI Assets/background_gradient2.png" id="4_kry3j"]
 [ext_resource type="Script" uid="uid://binfmtuxgsgex" path="res://Scripts/board.gd" id="5_kry3j"]
+[ext_resource type="StyleBox" uid="uid://dw8r08rr1if0f" path="res://UI Assets/button_texture_hover.tres" id="6_6bp64"]
+[ext_resource type="StyleBox" uid="uid://b5keuqbrgvy5m" path="res://UI Assets/button_texture.tres" id="6_21xkr"]
+[ext_resource type="StyleBox" uid="uid://db0uyew0ily0q" path="res://UI Assets/button_texture_click.tres" id="7_344ge"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jjvhh"]
 albedo_color = Color(0.221955, 0.609054, 0.518656, 1)
@@ -110,3 +113,25 @@ offset_bottom = -16.0
 grow_vertical = 0
 theme_override_font_sizes/normal_font_size = 64
 text = "Test"
+
+[node name="Monster Menu" type="Control" parent="HUD"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Attack Barehanded" type="Button" parent="HUD/Monster Menu"]
+layout_mode = 0
+offset_left = 792.0
+offset_top = 656.0
+offset_right = 1008.0
+offset_bottom = 752.0
+theme_override_font_sizes/font_size = 32
+theme_override_styles/hover = ExtResource("6_6bp64")
+theme_override_styles/pressed = ExtResource("7_344ge")
+theme_override_styles/normal = ExtResource("6_21xkr")
+text = "Attack"
+
+[node name="Attack with Weapon" type="Button" parent="HUD/Monster Menu"]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0

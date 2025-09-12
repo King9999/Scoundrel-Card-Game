@@ -4,7 +4,7 @@ class_name GameManager
 
 signal update_card_details(show_window: bool, text: String)
 
-@onready var camera = $Camera3D
+@onready var camera: Camera3D = $Camera3D
 var poll_rate: float = 0.3				#used to prevent game from checking for mouse input every frame
 var last_poll_time: float
 
@@ -63,9 +63,19 @@ func _get_mouse_input():
 			var value = card.card_value
 			print("Card is {0} with value {1} ".format([card_type, value]))
 			var card_text = "{0}\nValue: {1}".format([card_type, value])
-			update_card_details.emit(true, card_text)							#HUD will be updated			
+			update_card_details.emit(true, card_text)							#HUD will be updated	
+			
+			#if the card is clicked, player can drag it to different locations.
+			#if the card is a monster, the card can be sent to the discard pile. If so, the player fought the monster barehanded.
+			#if the player drags the monster to an applicable weapon, the player reduces the damage dealt.
+			if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+				#pick up card. Must convert card's position to a vec2
+				#var card_pos: Vector2 = camera.unproject_position(card.global_position)
+				#var mouse_pos = camera.get_viewport().get_mouse_position()
+				#card.global_position = camera.project_position(mouse_pos, 1.8)
+				pass
 	else:
-		update_card_details.emit(false ,"")
+		update_card_details.emit(false, "")
 
 
 func _physics_process(delta: float) -> void:
