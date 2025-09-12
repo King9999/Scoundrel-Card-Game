@@ -89,15 +89,52 @@ grow_vertical = 0
 theme_override_font_sizes/normal_font_size = 64
 text = "Test"
 
-[node name="Room HUD" type="Panel" parent="HUD"]
+[node name="Player HUD" type="Panel" parent="HUD"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -252.0
+offset_top = -160.0
+offset_right = 252.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_21xkr")
+
+[node name="Health Text" type="RichTextLabel" parent="HUD/Player HUD"]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 744.0
-offset_top = -200.0
-offset_right = 1312.0
-offset_bottom = 8.0
+offset_left = 64.0
+offset_top = -128.0
+offset_right = 464.0
+offset_bottom = -64.0
+grow_vertical = 0
+theme_override_font_sizes/normal_font_size = 32
+text = "Test"
+
+[node name="Health Bar" type="TextureProgressBar" parent="HUD/Player HUD"]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 112.0
+offset_right = 412.0
+offset_bottom = 144.0
+max_value = 20.0
+value = 11.0
+
+[node name="Room HUD" type="Panel" parent="HUD"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -568.0
+offset_top = -208.0
+grow_horizontal = 0
 grow_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxTexture_21xkr")
 
@@ -109,10 +146,23 @@ anchor_bottom = 1.0
 offset_left = 40.0
 offset_top = -184.0
 offset_right = 536.0
-offset_bottom = -16.0
+offset_bottom = -80.0
 grow_vertical = 0
 theme_override_font_sizes/normal_font_size = 64
-text = "Test"
+text = "Room 1"
+horizontal_alignment = 1
+
+[node name="Run Away" type="Button" parent="HUD/Room HUD"]
+layout_mode = 0
+offset_left = 176.0
+offset_top = 136.0
+offset_right = 392.0
+offset_bottom = 184.0
+theme_override_font_sizes/font_size = 28
+theme_override_styles/hover = ExtResource("6_6bp64")
+theme_override_styles/pressed = ExtResource("7_344ge")
+theme_override_styles/normal = ExtResource("6_21xkr")
+text = "Run Away"
 
 [node name="Monster Menu" type="Control" parent="HUD"]
 anchors_preset = 0
@@ -124,14 +174,21 @@ layout_mode = 0
 offset_left = 792.0
 offset_top = 656.0
 offset_right = 1008.0
-offset_bottom = 752.0
-theme_override_font_sizes/font_size = 32
+offset_bottom = 704.0
+theme_override_font_sizes/font_size = 28
 theme_override_styles/hover = ExtResource("6_6bp64")
 theme_override_styles/pressed = ExtResource("7_344ge")
 theme_override_styles/normal = ExtResource("6_21xkr")
-text = "Attack"
+text = "Fight Barehand"
 
-[node name="Attack with Weapon" type="Button" parent="HUD/Monster Menu"]
+[node name="Fight with Weapon" type="Button" parent="HUD/Monster Menu"]
 layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
+offset_left = 792.0
+offset_top = 704.0
+offset_right = 1008.0
+offset_bottom = 752.0
+theme_override_font_sizes/font_size = 24
+theme_override_styles/hover = ExtResource("6_6bp64")
+theme_override_styles/pressed = ExtResource("7_344ge")
+theme_override_styles/normal = ExtResource("6_21xkr")
+text = "Fight with Weapon"
