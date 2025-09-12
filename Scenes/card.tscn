@@ -18,11 +18,12 @@ albedo_texture = ExtResource("2_brehn")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wf8id"]
 
-[node name="Card" type="StaticBody3D" node_paths=PackedStringArray("face")]
+[node name="Card" type="StaticBody3D" node_paths=PackedStringArray("face", "hitbox")]
 top_level = true
 script = ExtResource("1_brehn")
 face = NodePath("Face")
 card_face = SubResource("StandardMaterial3D_wf8id")
+hitbox = NodePath("CollisionShape3D")
 
 [node name="Face" type="MeshInstance3D" parent="."]
 material_override = SubResource("StandardMaterial3D_jjvhh")

@@ -27,14 +27,15 @@ func draw_card(amount: int):
 	var board = Singleton.board	
 	#cards must be placed in designated nodes on the board.
 	for i in amount:
-		var card = cards.pop_front() 		#removes top card
+		var card: Card = cards.pop_front() 		#removes top card
 		board.room[i] = card
 		card.global_position = board.card_spaces[i].global_position
 		
 		#rotate card on its x axis so it lays flat
 		card.set_face_up()
+		card.disable_collision(false)			#can now hover over the card to view its data
 		print("Card Pos: " + str(board.room[i].global_position))
-		print(card.rotation)
+		#print(card.rotation)
 
 
 ##Creates a fresh deck of cards. Card data is inserted to cards at random 
@@ -58,6 +59,7 @@ func shuffle_deck():
 		#add card data to card node	
 		used_data[rand_num] = true
 		cards[i].set_card_data(card_data[rand_num])
+		cards[i].disable_collision(true)		#by default, collision boxes are disabled until the card is drawn. This prevents hovering over the deck to get info
 		
 		#create pile of cards
 		if i > 0:
