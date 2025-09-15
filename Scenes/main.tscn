@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://blgoy73mkojol"]
+[gd_scene load_steps=15 format=3 uid="uid://blgoy73mkojol"]
 
 [ext_resource type="Script" uid="uid://dwesm3804gwdb" path="res://Scripts/GameManager.gd" id="1_bo1nx"]
 [ext_resource type="Script" uid="uid://dsre01tppqyx7" path="res://Scripts/hud.gd" id="4_21xkr"]
@@ -7,7 +7,10 @@
 [ext_resource type="Script" uid="uid://binfmtuxgsgex" path="res://Scripts/board.gd" id="5_kry3j"]
 [ext_resource type="StyleBox" uid="uid://dw8r08rr1if0f" path="res://UI Assets/button_texture_hover.tres" id="6_6bp64"]
 [ext_resource type="StyleBox" uid="uid://b5keuqbrgvy5m" path="res://UI Assets/button_texture.tres" id="6_21xkr"]
+[ext_resource type="Texture2D" uid="uid://bwkr8oa4jntp7" path="res://UI Assets/healthbar_back.png" id="6_hptm8"]
 [ext_resource type="StyleBox" uid="uid://db0uyew0ily0q" path="res://UI Assets/button_texture_click.tres" id="7_344ge"]
+[ext_resource type="Texture2D" uid="uid://b44cswt8j4spu" path="res://UI Assets/healthbar_progress.png" id="7_d1ilt"]
+[ext_resource type="Texture2D" uid="uid://c28btp7tbxftj" path="res://UI Assets/healthbar_fill.png" id="8_d1ilt"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jjvhh"]
 albedo_color = Color(0.221955, 0.609054, 0.518656, 1)
@@ -116,14 +119,25 @@ grow_vertical = 0
 theme_override_font_sizes/normal_font_size = 32
 text = "Test"
 
-[node name="Health Bar" type="TextureProgressBar" parent="HUD/Player HUD"]
-layout_mode = 0
-offset_left = 100.0
-offset_top = 112.0
-offset_right = 412.0
-offset_bottom = 144.0
-max_value = 20.0
-value = 11.0
+[node name="Health Bar" type="Node2D" parent="HUD/Player HUD"]
+position = Vector2(102, 118)
+
+[node name="Back" type="Sprite2D" parent="HUD/Player HUD/Health Bar"]
+scale = Vector2(0.3125, 0.25)
+texture = ExtResource("6_hptm8")
+offset = Vector2(512, 0)
+
+[node name="Progress" type="Sprite2D" parent="HUD/Player HUD/Health Bar"]
+position = Vector2(5, 0)
+scale = Vector2(0.322917, 0.175)
+texture = ExtResource("7_d1ilt")
+offset = Vector2(480, 0)
+
+[node name="Fill" type="Sprite2D" parent="HUD/Player HUD/Health Bar"]
+position = Vector2(5, 0)
+scale = Vector2(0.322917, 0.175)
+texture = ExtResource("8_d1ilt")
+offset = Vector2(480, 0)
 
 [node name="Room HUD" type="Panel" parent="HUD"]
 layout_mode = 1
