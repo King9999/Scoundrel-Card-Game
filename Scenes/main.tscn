@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://blgoy73mkojol"]
+[gd_scene load_steps=16 format=3 uid="uid://blgoy73mkojol"]
 
 [ext_resource type="Script" uid="uid://dwesm3804gwdb" path="res://Scripts/GameManager.gd" id="1_bo1nx"]
 [ext_resource type="Script" uid="uid://dsre01tppqyx7" path="res://Scripts/hud.gd" id="4_21xkr"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dvya7arg7atwl" path="res://UI Assets/background_gradient2.png" id="4_kry3j"]
 [ext_resource type="Script" uid="uid://binfmtuxgsgex" path="res://Scripts/board.gd" id="5_kry3j"]
 [ext_resource type="StyleBox" uid="uid://dw8r08rr1if0f" path="res://UI Assets/button_texture_hover.tres" id="6_6bp64"]
+[ext_resource type="Script" uid="uid://dbencvbbv2kkc" path="res://Scripts/health_bar.gd" id="6_6iyac"]
 [ext_resource type="StyleBox" uid="uid://b5keuqbrgvy5m" path="res://UI Assets/button_texture.tres" id="6_21xkr"]
 [ext_resource type="Texture2D" uid="uid://bwkr8oa4jntp7" path="res://UI Assets/healthbar_back.png" id="6_hptm8"]
 [ext_resource type="StyleBox" uid="uid://db0uyew0ily0q" path="res://UI Assets/button_texture_click.tres" id="7_344ge"]
@@ -121,6 +122,7 @@ text = "Test"
 
 [node name="Health Bar" type="Node2D" parent="HUD/Player HUD"]
 position = Vector2(102, 118)
+script = ExtResource("6_6iyac")
 
 [node name="Back" type="Sprite2D" parent="HUD/Player HUD/Health Bar"]
 scale = Vector2(0.3125, 0.25)
@@ -173,9 +175,9 @@ offset_top = 136.0
 offset_right = 392.0
 offset_bottom = 184.0
 theme_override_font_sizes/font_size = 28
-theme_override_styles/hover = ExtResource("6_6bp64")
-theme_override_styles/pressed = ExtResource("7_344ge")
 theme_override_styles/normal = ExtResource("6_21xkr")
+theme_override_styles/pressed = ExtResource("7_344ge")
+theme_override_styles/hover = ExtResource("6_6bp64")
 text = "Run Away"
 
 [node name="Monster Menu" type="Control" parent="HUD"]
@@ -190,9 +192,9 @@ offset_top = 656.0
 offset_right = 1008.0
 offset_bottom = 704.0
 theme_override_font_sizes/font_size = 28
-theme_override_styles/hover = ExtResource("6_6bp64")
-theme_override_styles/pressed = ExtResource("7_344ge")
 theme_override_styles/normal = ExtResource("6_21xkr")
+theme_override_styles/pressed = ExtResource("7_344ge")
+theme_override_styles/hover = ExtResource("6_6bp64")
 text = "Fight Barehand"
 
 [node name="Fight with Weapon" type="Button" parent="HUD/Monster Menu"]
@@ -202,7 +204,7 @@ offset_top = 704.0
 offset_right = 1008.0
 offset_bottom = 752.0
 theme_override_font_sizes/font_size = 24
-theme_override_styles/hover = ExtResource("6_6bp64")
-theme_override_styles/pressed = ExtResource("7_344ge")
 theme_override_styles/normal = ExtResource("6_21xkr")
+theme_override_styles/pressed = ExtResource("7_344ge")
+theme_override_styles/hover = ExtResource("6_6bp64")
 text = "Fight with Weapon"

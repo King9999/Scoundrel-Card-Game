@@ -5,6 +5,7 @@ class_name GameManager
 signal update_card_details(show_window: bool, text: String)
 
 @onready var camera: Camera3D = $Camera3D
+@onready var health_bar: HealthBar = $"HUD/Player HUD/Health Bar"
 var poll_rate: float = 0.3				#used to prevent game from checking for mouse input every frame
 var last_poll_time: float
 
@@ -27,7 +28,7 @@ func _ready() -> void:
 		
 	#player setup
 	hit_points = max_hit_points
-	
+	#health_bar.show_damage_preview(5)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

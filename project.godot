@@ -12,7 +12,7 @@ config_version=5
 
 config/name="Scoundrel Card Game Godot"
 run/main_scene="uid://blgoy73mkojol"
-config/features=PackedStringArray("4.4", "GL Compatibility")
+config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
