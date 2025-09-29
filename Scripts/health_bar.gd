@@ -14,6 +14,9 @@ var flash_bar: bool						#if true, progress bar flashes
 var last_flash_time: float
 var flash_rate: float = 0.25
 
+#track previous bar details
+var prev_health_scale: float
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	max_health = healthbar_fill.scale.x		
@@ -42,9 +45,14 @@ func show_damage_preview(damage_amount: float):
 	damage_percent = 1 if damage_percent > 1 else damage_percent
 	damage_percent = 0 if damage_percent < 0 else damage_percent
 	#print("damage %: " + str(1 - damage_percent))
+	prev_health_scale = healthbar_fill.scale.x
 	healthbar_fill.scale.x *= damage_percent
 	#the damage portion flashes to get player attention.
 	flash_bar = true
+
+func undo_damage_preview():
+	healthbar_fill.scale.x = prev_health_scale
+	flash_bar = false
 
 ##Reduces health bar by converting [param damage_amount] into a percentage amount.
 func reduce_healthbar(damage_amount: float):

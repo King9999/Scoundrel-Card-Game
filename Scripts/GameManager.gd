@@ -18,6 +18,7 @@ var last_poll_time: float
 
 @export_category("Room Data")
 @export var room_num: int				#current room player is in
+@export var selected_card: Card			#highlights the currently selected card.
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -64,12 +65,14 @@ func _get_mouse_input():
 			var value = card.card_value
 			print("Card is {0} with value {1} ".format([card_type, value]))
 			var card_text = "{0}\nValue: {1}".format([card_type, value])
-			update_card_details.emit(true, card_text)							#HUD will be updated	
+			update_card_details.emit(true, card_text)							#HUD will be updated
 			
 			#if the card is clicked, player can drag it to different locations.
 			#if the card is a monster, the card can be sent to the discard pile. If so, the player fought the monster barehanded.
 			#if the player drags the monster to an applicable weapon, the player reduces the damage dealt.
 			if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+				selected_card = card
+				print("Selected card {0} with value {1} ".format([card_type, value]))	
 				#pick up card. Must convert card's position to a vec2
 				#var card_pos: Vector2 = camera.unproject_position(card.global_position)
 				#var mouse_pos = camera.get_viewport().get_mouse_position()
@@ -77,6 +80,7 @@ func _get_mouse_input():
 				pass
 	else:
 		update_card_details.emit(false, "")
+		#selected_card = null
 
 
 func _physics_process(delta: float) -> void:

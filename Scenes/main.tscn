@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://blgoy73mkojol"]
+[gd_scene load_steps=17 format=3 uid="uid://blgoy73mkojol"]
 
 [ext_resource type="Script" uid="uid://dwesm3804gwdb" path="res://Scripts/GameManager.gd" id="1_bo1nx"]
 [ext_resource type="Script" uid="uid://dsre01tppqyx7" path="res://Scripts/hud.gd" id="4_21xkr"]
@@ -12,6 +12,7 @@
 [ext_resource type="StyleBox" uid="uid://db0uyew0ily0q" path="res://UI Assets/button_texture_click.tres" id="7_344ge"]
 [ext_resource type="Texture2D" uid="uid://b44cswt8j4spu" path="res://UI Assets/healthbar_progress.png" id="7_d1ilt"]
 [ext_resource type="Texture2D" uid="uid://c28btp7tbxftj" path="res://UI Assets/healthbar_fill.png" id="8_d1ilt"]
+[ext_resource type="Script" uid="uid://dciugwiwl1tyu" path="res://Scripts/monster_menu.gd" id="13_fdnlq"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jjvhh"]
 albedo_color = Color(0.221955, 0.609054, 0.518656, 1)
@@ -184,6 +185,7 @@ text = "Run Away"
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+script = ExtResource("13_fdnlq")
 
 [node name="Attack Barehanded" type="Button" parent="HUD/Monster Menu"]
 layout_mode = 0
@@ -208,3 +210,6 @@ theme_override_styles/normal = ExtResource("6_21xkr")
 theme_override_styles/pressed = ExtResource("7_344ge")
 theme_override_styles/hover = ExtResource("6_6bp64")
 text = "Fight with Weapon"
+
+[connection signal="mouse_entered" from="HUD/Monster Menu/Attack Barehanded" to="HUD/Monster Menu" method="_on_attack_barehanded_mouse_entered"]
+[connection signal="mouse_exited" from="HUD/Monster Menu/Attack Barehanded" to="HUD/Monster Menu" method="_on_attack_barehanded_mouse_exited"]
